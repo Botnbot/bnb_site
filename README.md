@@ -1,2 +1,8 @@
-# bnb_docker
-Docker configuration sample for Botnbot
+# bnb_project
+
+Contains :
+* Github pages
+* Architecture info
+* Docker compose configuration sample for Botnbot
+
+TODO...
