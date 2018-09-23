@@ -99,6 +99,7 @@ header nav>ul>li {
 
 .features {
   text-align: center;
+  color: #424242;
 }
 
 .features h2 {
@@ -121,14 +122,19 @@ header nav>ul>li {
 
 .features-content h3 {
   font-size: 1.75em;
+  margin-top: 8px;
+  margin-bottom: 12px;
 }
 
 .features-content svg {
-  width:96px;
-  height:96px;
+  width:72px;
+  height:72px;
 }
-
-
+@media (max-width: 800px) {
+  .features-content {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+}
 
 @media (max-width: 600px) {
   .hero h1 {
@@ -146,6 +152,5 @@ header nav>ul>li {
 
   .features-content {
     grid-template-columns: repeat(1, 1fr);
-  }
-  
+  } 
 }
