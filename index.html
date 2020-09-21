@@ -25,10 +25,8 @@
 
   <link rel="shortcut icon" href="images/favicon.ico">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-pink.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bundle.css">
 </head>
 
 <body>
@@ -37,9 +35,10 @@
     <nav>
       <ul>
         <li>
-          <a href="https://my.botnbot.com">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-              Try Botnbot !
+          <a class="button" href="https://my.botnbot.com">
+            <button class="bnb-button mdc-button mdc-button--raised">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Try Botnbot !</span>
             </button>
           </a>
         </li>
@@ -52,13 +51,14 @@
     </div>
     <div>
       <h2>Open source uptime and front-end performance monitoring</h2>
-      <a href="https://my.botnbot.com">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-          Try Botnbot !
+      <a class="button" href="https://my.botnbot.com">
+        <button class="bnb-button mdc-button mdc-button--raised">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">Try Botnbot !</span>
         </button>
       </a>
       <span>
-        <span>or&nbsp;</span><a href="https://github.com/frocher/bnb_site">install it yourself</a>
+        <span>or&nbsp;</span><a class="install" href="https://github.com/frocher/bnb_site">install it yourself</a>
       </span>
     </div>
     </div>
@@ -119,9 +119,9 @@
         <p>
           Downtime monitoring is usually not enough.
           <a href="https://timkadlec.com/2014/11/performance-budget-metrics">Performance Budgets</a> allow you to
-          define performance goals for every metrics that you want to track (e.g. "Total assets size" or "Speed
+          define performance goals for every metric that you want to track (e.g. "Total assets size" or "Speed
           index").
-          Each day, every goals are reviewed by Botnbot and if at least one is crossed, an email is sent to you with
+          Each day, every goal is reviewed by Botnbot and if at least one is crossed, an email is sent to you with
           budget tracking informations.
         </p>
       </div>
@@ -153,7 +153,7 @@
         <h3>Progressive Web App</h3>
         <p>
           Botnbot is a <a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web App</a> and
-          its sources are available on <a href="https://github.com/frocher/bnb_site">Github</a>.
+          its sources are available on <a href="https://github.com/frocher/botnbot">Github</a>.
           As a Progressive Web App, it is served over HTTPS, can work offline, has responsive pages, can push web
           notifications and can be added to device home screen.
         </p>
@@ -162,35 +162,74 @@
   </section>
   <section class="screenshots">
     <h2>Screenshots</h2>
-    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-      <div class="mdl-tabs__tab-bar">
-        <a href="#home-panel" class="mdl-tabs__tab is-active">Home</a>
-        <a href="#stats-panel" class="mdl-tabs__tab">Statistics</a>
-        <a href="#performance-panel" class="mdl-tabs__tab">Performance</a>
-        <a href="#details-panel" class="mdl-tabs__tab">Details</a>
+
+    <div class="mdc-tab-bar" role="tablist">
+      <div class="mdc-tab-scroller">
+        <div class="mdc-tab-scroller__scroll-area">
+          <div class="mdc-tab-scroller__scroll-content">
+            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label">Home</span>
+              </span>
+              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button class="mdc-tab" role="tab">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label">Statistics</span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button class="mdc-tab" role="tab">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label">Performance</span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button class="mdc-tab" role="tab">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label">Details</span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="mdl-tabs__panel is-active" id="home-panel">
+    </div>
+    <div id="panels">
+      <div class="content content--active">
         <picture>
           <source srcset="images/home-phone.jpg" media="(max-width: 600px)" />
           <source srcset="images/home-tablet.jpg" media="(max-width: 800px)" />
           <img srcset="images/home-desktop.jpg" alt="Home screenshot" />
         </picture>
       </div>
-      <div class="mdl-tabs__panel" id="stats-panel">
+      <div class="content">
         <picture>
           <source srcset="images/stats-phone.jpg" media="(max-width: 600px)" />
           <source srcset="images/stats-tablet.jpg" media="(max-width: 800px)" />
           <img srcset="images/stats-desktop.jpg" alt="Lighthouse statistices screenshot" />
         </picture>
       </div>
-      <div class="mdl-tabs__panel" id="performance-panel">
+      <div class="content">
         <picture>
           <source srcset="images/performance-phone.jpg" media="(max-width: 600px)" />
           <source srcset="images/performance-tablet.jpg" media="(max-width: 800px)" />
           <img srcset="images/performance-desktop.jpg" alt="Performance screenshot" />
         </picture>
       </div>
-      <div class="mdl-tabs__panel" id="details-panel">
+      <div class="content">
         <picture>
           <source srcset="images/details-phone.jpg" media="(max-width: 600px)" />
           <source srcset="images/details-tablet.jpg" media="(max-width: 800px)" />
@@ -199,8 +238,89 @@
       </div>
     </div>
   </section>
+
+  <section class="pricing">
+    <h2>Pricing</h2>
+
+    <div class="tiers">
+      <div class="columns mdc-card mdc-card--outlined">
+        <ul class="price">
+          <li class="header first">Free</li>
+          <li class="grey">$ 0 / month</li>
+          <li><em>3</em> monitored pages</li>
+          <li><em>3</em> team members</li>
+          <li>Uptime check every <em>15</em> minutes</li>
+          <li class="grey">
+            <a class="button" href="https://my.botnbot.com/signup">
+              <button class="bnb-button mdc-button mdc-button--raised mdc-card__action">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Sign up</span>
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="columns mdc-card mdc-card--outlined">
+        <ul class="price">
+          <li class="header second">Starter</li>
+          <li class="grey">$ 5.90 / month</li>
+          <li><em>10</em> monitored pages</li>
+          <li><em>10</em> team members</li>
+          <li>Uptime check every <em>15</em> minutes</li>
+          <li class="grey">
+            <a class="button" href="https://my.botnbot.com/signup">
+              <button class="bnb-button mdc-button mdc-button--raised mdc-card__action">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Sign up</span>
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="columns mdc-card mdc-card--outlined">
+        <ul class="price">
+          <li class="header third">Business</li>
+          <li class="grey">$ 14.90 / month</li>
+          <li><em>30</em> monitored pages</li>
+          <li><em>Unlimited</em> team members</li>
+          <li>Uptime check every <em>5</em> minutes</li>
+          <li class="grey">
+            <a class="button" href="https://my.botnbot.com/signup">
+              <button class="bnb-button mdc-button mdc-button--raised mdc-card__action">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Sign up</span>
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="columns mdc-card mdc-card--outlined">
+        <ul class="price">
+          <li class="header fourth">Enterprise</li>
+          <li class="grey">$ 99.90 / month</li>
+          <li><em>200</em> monitored pages</li>
+          <li><em>Unlimited</em> team members</li>
+          <li>Uptime check every <em>1</em> minute</li>
+          <li class="grey">
+            <a class="button" href="https://my.botnbot.com/signup">
+              <button class="bnb-button mdc-button mdc-button--raised mdc-card__action">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Sign up</span>
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+
   <footer>
-    <a href="https://github.com/frocher/bnb_site" title=" Botnbot Github">
+    <a href="https://github.com/frocher/botnbot" title="Botnbot Github">
       <svg viewBox="0 0 24 24">
         <path fill="#000000" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
       </svg>
@@ -211,7 +331,7 @@
       </svg>
     </a>
   </footer>
-  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="bundle.js" async></script>
 </body>
 
 </html>
