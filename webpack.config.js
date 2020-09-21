@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { resolve } = require('path');
 const autoprefixer = require('autoprefixer');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = [{
   entry: ['./app.scss', './app.js'],
@@ -54,6 +55,14 @@ module.exports = [{
     new HtmlWebpackPlugin({
       template: resolve('./index.html'),
       inject: false,
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'images/**',
+          context: resolve('.'),
+        },
+      ],
     }),
   ],
 }];
