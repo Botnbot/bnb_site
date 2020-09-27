@@ -62,6 +62,10 @@ module.exports = [{
           from: 'images/**',
           context: resolve('.'),
         },
+        {
+          from: 'robots.txt',
+          context: resolve('.'),
+        },        
       ],
     }),
   ],
