@@ -57,6 +57,11 @@ header h2 {
   margin-top: 0;
 }
 
+header a {
+  text-decoration: none;
+  color: #424242;
+}
+
 header h2 img {
   width: 2.5em;
   vertical-align: middle;
@@ -282,12 +287,28 @@ header nav>ul>li {
 }
 
 footer {
-  text-align: right;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   color: #424242;
+  background-color: #F5F5F5;
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 32px;
   padding-right: 32px;
+}
+
+footer ul:first-of-type {
+  flex-grow: 1;
+}
+
+footer ul {
+  padding-left: 0;
+}
+
+footer li {
+  display: inline-block;
+  margin-right: 16px;
 }
 
 footer svg {
@@ -296,7 +317,14 @@ footer svg {
 }
 
 footer a {
+  color: #424242;
   text-decoration: none;
+}
+
+.policy {
+  margin-top: 7em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 @media (max-width: 800px) {
