@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { resolve } = require('path');
-const autoprefixer = require('autoprefixer');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = [{
@@ -24,7 +23,11 @@ module.exports = [{
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [autoprefixer()],
+              postcssOptions: {
+                plugins: [
+                  ['autoprefixer']
+                ]
+              }
             }
           },
           {
@@ -45,8 +48,8 @@ module.exports = [{
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-env'],
+        options: {
+          presets: ['@babel/preset-env']
         },
       }
     ]
