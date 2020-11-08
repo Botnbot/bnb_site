@@ -61,6 +61,11 @@ module.exports = [{
       filename: 'policy.html',
       inject: false,
     }),
+    new HtmlWebpackPlugin({
+      template: resolve('./terms.html'),
+      filename: 'terms.html',
+      inject: false,
+    }),
     new CopyPlugin({
       patterns: [
         {
